@@ -1,9 +1,20 @@
-import React from "react";
+import React, {useState} from "react";
 
-function Search() {
+function Search({listArr, renderFilter}) {
+
+  const [searchInput, setSearchInput] = useState('');
+
   function handleSubmit(e) {
     e.preventDefault();
-    console.log("submitted");
+    const copy = [...listArr];
+    const updatedList = copy.filter(list=>
+      {
+        const loList = list.description.toLowerCase();
+        const loSearch = searchInput.toLowerCase();
+      return loList.match(loSearch);
+    })
+    if (searchInput === "") {renderFilter(copy)}
+    else renderFilter(updatedList);
   }
 
   return (
@@ -12,8 +23,8 @@ function Search() {
         type="text"
         id="search"
         placeholder="search free stuff"
-        value={""}
-        onChange={(e) => console.log(e.target.value)}
+        value={searchInput}
+        onChange={(e) => setSearchInput(e.target.value)}
       />
       <button type="submit">🔍</button>
     </form>

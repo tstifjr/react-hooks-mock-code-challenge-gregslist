@@ -41,6 +41,12 @@
       "description": "Treadmill Parts For Free",
       "image": "./images/treadmill.jpg",
       "location": "East Flatbush"
+    },
+    {
+      "description": "BoomBox",
+      "image": "https://cdn.pixabay.com/photo/2018/08/27/10/11/radio-cassette-3634616_1280.png",
+      "location": "Washington",
+      "id": 8
     }
   ]
 }
