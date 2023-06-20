@@ -1,20 +1,11 @@
 import React, {useState} from "react";
 
-function Search({listArr, renderFilter}) {
-
+function Search({setSearch}) {
   const [searchInput, setSearchInput] = useState('');
-
   function handleSubmit(e) {
     e.preventDefault();
-    const copy = [...listArr];
-    const updatedList = copy.filter(list=>
-      {
-        const loList = list.description.toLowerCase();
-        const loSearch = searchInput.toLowerCase();
-      return loList.match(loSearch);
-    })
-    if (searchInput === "") {renderFilter(copy)}
-    else renderFilter(updatedList);
+
+    setSearch(searchInput);
   }
 
   return (

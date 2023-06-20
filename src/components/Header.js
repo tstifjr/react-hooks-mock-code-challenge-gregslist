@@ -1,7 +1,8 @@
 import React from "react";
 import Search from "./Search";
 
-function Header({listArr, renderFilter}) {
+
+function Header({setSearch, updateList}) {
   
   return (
     <header>
@@ -11,7 +12,8 @@ function Header({listArr, renderFilter}) {
         </span>
         gregslist
       </h1>
-      <Search listArr={listArr} renderFilter={renderFilter}/>
+      <Search setSearch={setSearch}/>
+
     </header>
   );
 }

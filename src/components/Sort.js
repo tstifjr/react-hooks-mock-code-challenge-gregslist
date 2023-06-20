@@ -1,10 +1,10 @@
 
 
-function Sort ({letsSort}) {
+function Sort ({handleSort}) {
 
     return(
         <div>
-            <button type="button" name="sort" onClick={letsSort}>Sort Alphabetically By Location</button>
+            <button type="button" name="sort" onClick={handleSort}>Sort Alphabetically By Location</button>
         </div>
     )
 }
